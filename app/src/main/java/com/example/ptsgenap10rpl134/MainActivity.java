@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
                 String password = passwordtext.getText().toString();
 
                 if (email.equalsIgnoreCase("Admin") && password.equalsIgnoreCase("admin")){
-                    Toast.makeText(MainActivity.this, "Sukses", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, Dasboardmenu.class);
+                    startActivity(intent);
                 }else {
                     Toast.makeText(MainActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }
